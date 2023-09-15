@@ -1,9 +1,9 @@
 # sample code 
-'''
+```
 cleaned_df = clean_public_domains(df, email_col_name='user_email')
-'''
+```
 # sample output
-'''
+```
 Total email addresses: 65657
 Number of public domain types found: 41
 Total public domain emails: 4414
@@ -51,4 +51,4 @@ my.com                 1
 contractor.net         1
 usa.com                1
 Name: domain, dtype: int64
-'''
+```

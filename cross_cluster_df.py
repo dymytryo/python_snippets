@@ -3,8 +3,24 @@ import networkx as nx
 
 def cross_cluster(dataframe: pd.DataFrame, column_a: str, column_b: str, additional_columns: list) -> pd.DataFrame:
     """
-    Modify the function to aggregate additional columns alongside column_b. 
-    Each name in additional_columns should have a 1-to-1 relationship with column_b.
+    Create clusters based on the connections between two types of entities in a given DataFrame.
+    Each name in optional argument additional_columns should have a 1-to-1 relationship with column_b.
+    
+        Args:
+        dataframe (pd.DataFrame): The DataFrame containing the relationship data.
+        column_a (str): The name of the first column in the DataFrame representing the first entity.
+        column_b (str): The name of the second column in the DataFrame representing the second entity.
+        additional_columns (list): List of names of additional columns that need to be aggregated. 
+
+    Returns:
+        pd.DataFrame: A DataFrame where each row represents a cluster with two lists of entity IDs from each column.
+
+    Raises:
+        ValueError: If the specified columns are not found in the DataFrame.
+
+    Example:
+        >>> df = pd.DataFrame({'employeeId': ['E1', 'E2', 'E2'], 'departmentId': ['D5', 'D5', 'D6']})
+        >>> create_clusters(df, 'employeeId', 'departmentId', [])
     """
     if column_a not in dataframe.columns or column_b not in dataframe.columns or any(col not in dataframe.columns for col in additional_columns):
         raise ValueError("One or more specified columns not found in the DataFrame")

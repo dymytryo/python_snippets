@@ -6,7 +6,7 @@ def cross_cluster(dataframe: pd.DataFrame, column_a: str, column_b: str, additio
     Create clusters based on the connections between two types of entities in a given DataFrame.
     Each name in optional argument additional_columns should have a 1-to-1 relationship with column_b.
     
-        Args:
+    Args:
         dataframe (pd.DataFrame): The DataFrame containing the relationship data.
         column_a (str): The name of the first column in the DataFrame representing the first entity.
         column_b (str): The name of the second column in the DataFrame representing the second entity.
